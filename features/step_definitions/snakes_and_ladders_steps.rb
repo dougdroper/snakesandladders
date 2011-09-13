@@ -1,4 +1,5 @@
 Given /^a board with:$/ do |table|
+  raise table.hashes.inspect
   @board = Board.new(table.hashes)
 end
 
@@ -19,10 +20,10 @@ Given /^player (\d+) is on position (\d+)$/ do |player_number, position|
   @game.player(player_number.to_i).position.should == position.to_i
 end
 
-Then /^it is now player (\d+)'s go$/ do |player_number|
-  @game.current_player.number.to_i.should == player_number.to_i
-end
-
 Then /^player (\d+) has won the game$/ do |player_number|
   @game.player_has_won?(@game.player(player_number.to_i)).should == true
+end
+
+Then /^it is now player (\d+)'s go$/ do |player_number|
+  @game.current_player.number.to_i.should == player_number.to_i
 end

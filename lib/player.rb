@@ -5,8 +5,7 @@ class Player
   attr_accessor :number
   attr_accessor :position
 
-  def initialize(number, board)
-  	@board = board
+  def initialize(number)
   	@position = 0
   	@number = number
   end

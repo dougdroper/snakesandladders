@@ -7,7 +7,7 @@ class Game
     @board = board
   	@players = []
   	players.times do |number|
-      @players[number] = Player.new(number + 1, board)
+      @players[number] = Player.new(number + 1)
 	  end
     @current_player = @players.first
   end
