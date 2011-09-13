@@ -1,1 +1,3 @@
-require 'lib/snakes_and_ladders.rb'
+require 'lib/game.rb'
+require 'lib/board.rb'
+require 'lib/player.rb'
