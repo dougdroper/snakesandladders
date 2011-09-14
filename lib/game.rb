@@ -18,6 +18,16 @@ class Game
     switch_current_player unless number.to_i == 6
   end
 
+  def player number
+    @players.select{|p| p.number == number.to_i}.first
+  end
+
+  def player_has_won? player
+    player.position.to_i == 100
+  end
+
+  private
+
   def switch_current_player
     temp = @players.shift
     @players << temp
@@ -28,13 +38,5 @@ class Game
     if @board.board[(@current_player.position)] != ""
       @current_player.position = @board.board[@current_player.position]
     end
-  end
-
-  def player number
-    @players.select{|p| p.number == number.to_i}.first
-  end
-
-  def player_has_won? player
-    player.position.to_i == 100
   end
 end

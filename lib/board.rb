@@ -8,6 +8,8 @@ class Board
     end
   end
 
+  private
+
   def set_up_board
     @board = Array.new(BOARD_SIZE, "")
   end

@@ -1,5 +1,4 @@
 Given /^a board with:$/ do |table|
-  raise table.hashes.inspect
   @board = Board.new(table.hashes)
 end
 

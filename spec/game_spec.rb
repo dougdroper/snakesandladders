@@ -20,7 +20,7 @@ describe Game do
 
   it "should switch current player" do
     @game.current_player.number.should == 1
-    @game.switch_current_player
+    @game.send(:switch_current_player)
     @game.current_player.number.should == 2
   end
 
@@ -29,7 +29,7 @@ describe Game do
     @game.player_has_won?(@game.current_player).should be_true
   end
 
-  it "should know if a player has won" do
+  it "should know if a player has not won" do
     @game.current_player.position = 99
     @game.player_has_won?(@game.current_player).should be_false
   end
